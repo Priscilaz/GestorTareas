@@ -1,0 +1,4 @@
+App.class
+model/Tarea.class
+service/TareaService.class
+repository/TareaRepository.class
