@@ -1,36 +1,45 @@
 package service;
 
-import model.Tarea;
-import repository.TareaRepository;
-import service.TareaService;
-
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.time.LocalDate;
 
+import model.Tarea;
+import repository.TareaRepository;
+
+import org.junit.jupiter.api.Test;
 
 public class TareaServiceTest {
 
     @Test
-    void testCrearTarea() {
+    void deberiaCrearTareaCorrectamente() {
         TareaRepository repo = new TareaRepository();
         TareaService service = new TareaService(repo);
 
-        service.crearTarea(1, "Prueba", "Descripción", LocalDate.now().plusDays(2));
+        service.crearTarea(1, "Proyecto", "Desarrollar sistema", LocalDate.now());
 
-        assertEquals(1, repo.obtenerTodas().size());
+        assertEquals(1, service.obtenerTareas().size());
     }
 
     @Test
-    void testObtenerTareas() {
+    void deberiaDetectarTareaAtrasada() {
         TareaRepository repo = new TareaRepository();
         TareaService service = new TareaService(repo);
 
-        service.crearTarea(1, "A", "B", LocalDate.now());
+        Tarea tarea = new Tarea(2, "Entrega", "Trabajo final", LocalDate.now().minusDays(1));
 
-        assertFalse(service.obtenerTareas().isEmpty());
+        assertTrue(service.estaAtrasada(tarea));
     }
 
-    
+    @Test
+    void noDeberiaDetectarTareaAtrasadaSiFechaEsPosterior() {
+        TareaRepository repo = new TareaRepository();
+        TareaService service = new TareaService(repo);
+
+        Tarea tarea = new Tarea(3, "Tarea", "Resolver ejercicios", LocalDate.now().plusDays(1));
+
+        assertFalse(service.estaAtrasada(tarea));
+    }
 }

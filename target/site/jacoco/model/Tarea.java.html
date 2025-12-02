@@ -2,41 +2,73 @@
 
 import java.time.LocalDate;
 
+/**
+ * Representa una tarea dentro del sistema, incluyendo su identificación,
+ * título, descripción y fecha límite.
+ */
 public class Tarea {
 
+    /** Identificador único de la tarea. */
     private int id;
+
+    /** Título descriptivo de la tarea. */
     private String titulo;
+
+    /** Detalle breve del contenido de la tarea. */
     private String descripcion;
+
+    /** Fecha límite para completar la tarea. */
     private LocalDate fechaLimite;
 
-    private String auxiliar;
+    /**
+     * Crea una nueva instancia de Tarea.
+     *
+     * @param id          identificador único
+     * @param titulo      título de la tarea
+     * @param descripcion descripción de la tarea
+     * @param fechaLimite fecha límite de cumplimiento
+     */
+<span class="fc" id="L31">    public Tarea(int id, String titulo, String descripcion, LocalDate fechaLimite) {</span>
+<span class="fc" id="L32">        this.id = id;</span>
+<span class="fc" id="L33">        this.titulo = titulo;</span>
+<span class="fc" id="L34">        this.descripcion = descripcion;</span>
+<span class="fc" id="L35">        this.fechaLimite = fechaLimite;</span>
+<span class="fc" id="L36">    }</span>
 
-<span class="fc" id="L14">    public Tarea(int id, String titulo, String descripcion, LocalDate fechaLimite) {</span>
-<span class="fc" id="L15">        this.id = id;</span>
-<span class="fc" id="L16">        this.titulo = titulo;</span>
-<span class="fc" id="L17">        this.descripcion = descripcion;</span>
-<span class="fc" id="L18">        this.fechaLimite = fechaLimite;</span>
-<span class="fc" id="L19">    }</span>
-
+    /**
+     * Obtiene el identificador de la tarea.
+     *
+     * @return id de la tarea
+     */
     public int getId() {
-<span class="nc" id="L22">        return id;</span>
+<span class="fc" id="L44">        return id;</span>
     }
 
-    public String getTitulo(){
-<span class="nc" id="L26">        return titulo;</span>
+    /**
+     * Obtiene el título de la tarea.
+     *
+     * @return título de la tarea
+     */
+    public String getTitulo() {
+<span class="fc" id="L53">        return titulo;</span>
     }
 
+    /**
+     * Obtiene la descripción de la tarea.
+     *
+     * @return descripción de la tarea
+     */
     public String getDescripcion() {
-<span class="nc" id="L30">        return descripcion;</span>
+<span class="fc" id="L62">        return descripcion;</span>
     }
 
+    /**
+     * Obtiene la fecha límite establecida para la tarea.
+     *
+     * @return fecha límite
+     */
     public LocalDate getFechaLimite() {
-<span class="nc" id="L34">        return fechaLimite;</span>
+<span class="fc" id="L71">        return fechaLimite;</span>
     }
-
-    
-    public void setAuxiliar(String auxiliar) {
-<span class="nc" id="L39">        this.auxiliar = auxiliar;</span>
-<span class="nc" id="L40">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

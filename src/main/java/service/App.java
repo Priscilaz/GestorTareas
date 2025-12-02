@@ -1,10 +1,18 @@
+import java.time.LocalDate;
+
 import repository.TareaRepository;
 import service.TareaService;
 
-import java.time.LocalDate;
-
+/**
+ * Punto de entrada principal de la aplicación de gestión de tareas.
+ */
 public class App {
 
+    /**
+     * Método principal que ejecuta la aplicación.
+     *
+     * @param args argumentos de ejecución (no utilizados)
+     */
     public static void main(String[] args) {
         TareaRepository repo = new TareaRepository();
         TareaService service = new TareaService(repo);

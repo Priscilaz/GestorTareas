@@ -1,1 +1,3 @@
+repository/TareaRepositoryTest.class
 service/TareaServiceTest.class
+model/TareaTest.class

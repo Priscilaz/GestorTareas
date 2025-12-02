@@ -1,1 +1,3 @@
 /workspaces/GestorTareas/src/test/java/service/TareaServiceTest.java
+/workspaces/GestorTareas/src/test/java/model/TareaTest.java
+/workspaces/GestorTareas/src/test/java/repository/TareaRepositoryTest.java
